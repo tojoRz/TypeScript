@@ -12,11 +12,15 @@
  ```bash
  npm install typescript --save - dev  
  ```
- >Créer un fichier .ts
+ > Créer un fichier .ts
  ```bash
- mkdir app.ts
+ type nul > app.ts
  ``` 
  > Convertir le fichier .ts en .js
  ```bash
  npx tsc app.ts
+ ```
+ > Créer un dossier scr
+ ```bash
+ mkdir src
  ```
