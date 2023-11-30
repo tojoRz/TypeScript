@@ -47,3 +47,7 @@
  ```bash
  npx tsc
  ``` 
+ > ou
+ ```bash
+ npx tsc --watch
+ ``` 
