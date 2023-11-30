@@ -28,3 +28,22 @@
  ```bash
  npx tsc src/app.ts --outDir dist 
  ```
+ > Créer un fichier de configuration pour éviter de répéter ce commande ci-dessus et contient les informations pour compiler le projet 
+ ```bash
+ type nul > tsconfig.json
+ ```
+ > dans le fichier "tsconfig.json"
+ ```bash
+ {
+    "compilerOptions": {
+        "outDir": "dist"
+    },
+    "files": [
+        "src/app.ts"
+    ]
+ }
+ ```
+ > pour compiler, il suffit de taper ce code:
+ ```bash
+ npx tsc
+ ``` 
