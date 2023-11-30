@@ -24,3 +24,7 @@
  ```bash
  mkdir src
  ```
+ > Déplacer le fichier .ts dans le dossier src puis faire ce commande et nommer le dossier de destination "dist"
+ ```bash
+ npx tsc src/app.ts --outDir dist 
+ ```
