@@ -10,36 +10,61 @@ const increment = (e) => {
     }
 };
 compteur?.addEventListener("click", increment);
-//Les classes en typeScript
-function reverse(arr) {
-    return [...arr].reverse();
+/**
+ * !Les classes en typeScript
+ * ? Exemple
+*/
+// function reverse<T>(arr: readonly T[]): T[] {
+//     return [...arr].reverse();
+//   }
+//   class A {
+//     constructor(public a: number) {}
+//   }
+//   const aInstance = new A(3);
+//   console.log(aInstance.a);
+//   class Collection<T> {
+//     constructor(private items: T[]) {}
+//     add(items: T) {
+//       this.items.push(items);
+//       return this;
+//     }
+//     first(): T | null {
+//       return this.items[0] || null;
+//     }
+//     isEqual(a: this) {
+//       return a.items === this.items ;
+//     }
+//   }
+//   class SubCollection<T> extends Collection<T> {
+//       a =3
+//   }
+//   class Subscriber {
+//     on = (name: string, cb: Function) => {};
+//   }
+//   const a = new Collection([1, 2]);
+//   const b = new Collection([2, 2]);
+//   a.isEqual(b);
+// class Point {
+//     x = 0
+//     y = 0
+// }
+// class Geometry {
+//     x = 0
+//     y = 0
+//     surface = 0
+// }
+// function getX(p: Point) {
+//     return p.x
+// }
+// getX(new Geometry());
+class Geometry {
+    x = 0;
+    y = 0;
 }
-class A {
-    a;
-    constructor(a) {
-        this.a = a;
+class Triangle extends Geometry {
+    x = 2;
+    y = 2;
+    surface() {
+        return 3;
     }
 }
-const aInstance = new A(3);
-console.log(aInstance.a);
-class Collection {
-    items;
-    constructor(items) {
-        this.items = items;
-    }
-    add(items) {
-        this.items.push(items);
-        return this;
-    }
-    first() {
-        return this.items[0] || null;
-    }
-    isEqual(a) {
-        return;
-    }
-}
-class Subscriber {
-    on = (name, cb) => { };
-}
-const a = new Collection([1, 2]);
-const b = a.first();
