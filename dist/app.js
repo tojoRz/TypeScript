@@ -57,14 +57,21 @@ compteur?.addEventListener("click", increment);
 //     return p.x
 // }
 // getX(new Geometry());
+// abstract class Geometry {
+//     x = 0
+//     y = 0
+//     abstract surface(): number
+// }
+// class Triangle extends Geometry {
+//     x = 2
+//     y = 2
+//     surface(): number {
+//         return 3
+//     }
+// }
 class Geometry {
-    x = 0;
-    y = 0;
-}
-class Triangle extends Geometry {
-    x = 2;
-    y = 2;
-    surface() {
-        return 3;
+    static #origin;
+    static {
+        Geometry.#origin = { x: 0, y: 0 };
     }
 }
