@@ -3,9 +3,16 @@
         "outDir": "dist",
         "target": "ESNext",
         "noEmitOnError": false,
-        "strict": true
+        "strict": true,
+        "declaration": true,
+        "moduleResolution": "node",
+        "noUncheckedIndexedAccess": true,
     },
     "files": [
         "src/app.ts"
+    ],
+
+    "include":[
+        "src/type/**/*"
     ]
 }
