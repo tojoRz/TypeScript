@@ -155,7 +155,7 @@ compteur?.addEventListener("click", increment);
 
 /**
  * !unknown | Tuple | Enun
- * ? Exemple
+ * ? Exemple 
 */
 
 // type ListItem = [string, number]
