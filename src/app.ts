@@ -133,5 +133,51 @@ compteur?.addEventListener("click", increment);
 
 /**
  * !Type vs Interface
+ * *Type :
+ * - Peut utiliser des types primaire
+ * - ne peut être redéfinit
+ * 
+ * *Interface :
+ * - Peut être étendu
+ * - Peut être implémenté
  * ? Exemple
 */
+
+// interface Point {
+//   x:number
+//   y:number
+// }
+
+// class TwoDimensionPoint implements Point {
+//   x = 0
+//   y = 0
+// }
+
+/**
+ * !unknown | Tuple | Enun
+ * ? Exemple
+*/
+
+// type ListItem = [string, number]
+
+// const a: ListItem = ['tomate', 2]
+// const b: ListItem = ['banane', 3]
+
+// function merge<T extends unknown[], U extends unknown[]> (a: T, b: U): [...T, ...U] {
+//   return [...a, ...b]
+// }
+
+// const c = merge(a, b)
+
+
+enum STEPS {
+  Intro,
+  Selection,
+  Panier,
+  Paiement,
+}
+
+const steps: STEPS = STEPS.Selection
+
+console.log(STEPS[steps])
+
