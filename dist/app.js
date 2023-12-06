@@ -69,9 +69,38 @@ compteur?.addEventListener("click", increment);
 //         return 3
 //     }
 // }
-class Geometry {
-    static #origin;
-    static {
-        Geometry.#origin = { x: 0, y: 0 };
-    }
-}
+// class Geometry {
+//     static #origin: {x: number, y: number}
+//     static {
+//         Geometry.#origin = {x: 0, y:0}
+//     }
+// }
+// class Geometry {
+//   static #origin: {x: number, y: number}
+//   constructor(x: number, y: number) {
+//   }
+//   surface() {
+//     return 6
+//   }
+// }
+// class Triangle {
+//   constructor(x: number, y: number) {
+//   }
+//   surface() {
+//     return 3
+//   }
+// }
+// type InstantiableShape = {
+//   new (x: number, y:number): {
+//     surface: () => number
+//   }
+// }
+// function shapeGenerator(shapeType: InstantiableShape, x: number, y:number){
+//   return new shapeType(x, y).surface()
+// }
+// shapeGenerator(Geometry, 10, 20)
+// shapeGenerator(Triangle, 10, 20)
+/**
+ * !Type vs Interface
+ * ? Exemple
+*/ 
