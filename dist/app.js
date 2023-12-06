@@ -102,5 +102,40 @@ compteur?.addEventListener("click", increment);
 // shapeGenerator(Triangle, 10, 20)
 /**
  * !Type vs Interface
+ * *Type :
+ * - Peut utiliser des types primaire
+ * - ne peut être redéfinit
+ *
+ * *Interface :
+ * - Peut être étendu
+ * - Peut être implémenté
  * ? Exemple
-*/ 
+*/
+// interface Point {
+//   x:number
+//   y:number
+// }
+// class TwoDimensionPoint implements Point {
+//   x = 0
+//   y = 0
+// }
+/**
+ * !unknown | Tuple | Enun
+ * ? Exemple
+*/
+// type ListItem = [string, number]
+// const a: ListItem = ['tomate', 2]
+// const b: ListItem = ['banane', 3]
+// function merge<T extends unknown[], U extends unknown[]> (a: T, b: U): [...T, ...U] {
+//   return [...a, ...b]
+// }
+// const c = merge(a, b)
+var STEPS;
+(function (STEPS) {
+    STEPS[STEPS["Intro"] = 0] = "Intro";
+    STEPS[STEPS["Selection"] = 1] = "Selection";
+    STEPS[STEPS["Panier"] = 2] = "Panier";
+    STEPS[STEPS["Paiement"] = 3] = "Paiement";
+})(STEPS || (STEPS = {}));
+const steps = STEPS.Selection;
+console.log(STEPS[steps]);
