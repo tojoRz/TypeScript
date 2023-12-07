@@ -1,4 +1,3 @@
-"use strict";
 const compteur = document.querySelector("#compteur");
 let i = 0;
 const increment = (e) => {
@@ -130,12 +129,28 @@ compteur?.addEventListener("click", increment);
 //   return [...a, ...b]
 // }
 // const c = merge(a, b)
-var STEPS;
-(function (STEPS) {
-    STEPS[STEPS["Intro"] = 0] = "Intro";
-    STEPS[STEPS["Selection"] = 1] = "Selection";
-    STEPS[STEPS["Panier"] = 2] = "Panier";
-    STEPS[STEPS["Paiement"] = 3] = "Paiement";
-})(STEPS || (STEPS = {}));
-const steps = STEPS.Selection;
-console.log(STEPS[steps]);
+// enum STEPS {
+//   Intro,
+//   Selection,
+//   Panier,
+//   Paiement,
+// }
+// const steps: STEPS = STEPS.Selection
+// console.log(STEPS[steps])
+/**
+ * !Les fichiers de declaration
+ * ? Exemple
+*/
+export class Point {
+    x = 0;
+    y = 0;
+    move(x, y) {
+        this.x += x;
+        this.y += y;
+        return this;
+    }
+}
+window.ga('send', {
+    hitType: 'event',
+    eventCategory: 'Category'
+});
