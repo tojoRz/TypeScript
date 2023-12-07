@@ -170,14 +170,36 @@ compteur?.addEventListener("click", increment);
 // const c = merge(a, b)
 
 
-enum STEPS {
-  Intro,
-  Selection,
-  Panier,
-  Paiement,
+// enum STEPS {
+//   Intro,
+//   Selection,
+//   Panier,
+//   Paiement,
+// }
+
+// const steps: STEPS = STEPS.Selection
+
+// console.log(STEPS[steps])
+
+/**
+ * !Les fichiers de declaration
+ * ? Exemple 
+*/
+
+export class Point {
+  x = 0
+  y = 0
+
+  move (x: number, y:number) {
+    this.x += x
+    this.y += y
+    return this
+  }
 }
 
-const steps: STEPS = STEPS.Selection
+window.ga('send', {
+  hitType: 'event',
+  eventCategory: 'Category'
+})
 
-console.log(STEPS[steps])
 
