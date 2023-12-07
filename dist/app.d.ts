@@ -1,6 +1,3 @@
-declare const compteur: Element | null;
-declare let i: number;
-declare const increment: (e: Event) => void;
 /**
  * !Les classes en typeScript
  * ? Exemple
@@ -20,10 +17,12 @@ declare const increment: (e: Event) => void;
  * !unknown | Tuple | Enun
  * ? Exemple
 */
-declare enum STEPS {
-    Intro = 0,
-    Selection = 1,
-    Panier = 2,
-    Paiement = 3
+/**
+ * !Les fichiers de declaration
+ * ? Exemple
+*/
+export declare class Point {
+    x: number;
+    y: number;
+    move(x: number, y: number): this;
 }
-declare const steps: STEPS;
