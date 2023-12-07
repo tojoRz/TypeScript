@@ -11,8 +11,7 @@
     "files": [
         "src/app.ts"
     ],
-
     "include":[
-        "src/type/**/*"
+        "src/types/**/*"
     ]
 }
