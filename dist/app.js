@@ -1,3 +1,4 @@
+"use strict";
 const compteur = document.querySelector("#compteur");
 let i = 0;
 const increment = (e) => {
@@ -141,21 +142,76 @@ compteur?.addEventListener("click", increment);
  * !Les fichiers de declaration
  * ? Exemple
 */
-export class Point {
-    x = 0;
-    y = 0;
-    move(x, y) {
-        this.x += x;
-        this.y += y;
-        return this;
-    }
+// export class Point {
+//   x = 0
+//   y = 0
+//   move (x: number, y:number) {
+//     this.x += x
+//     this.y += y
+//     return this
+//   }
+// }
+// window.ga('send', {
+//   hitType: 'event',
+//   eventCategory: 'Category'
+// })
+// import scrollTo from 'scroll-to'
+// scrollTo ( 500 , 1200 , {  
+//   ease : ' out-bounce ' , 
+//   duration : 1500 
+// } ) ;
+/**
+ * !Types utilitaires
+ * ? Exemple
+*/
+// 1er exemple:
+/**
+ * class Poisons {
+
 }
-window.ga('send', {
-    hitType: 'event',
-    eventCategory: 'Category'
-});
-import scrollTo from 'scroll-to';
-scrollTo(500, 1200, {
-    ease: ' out-bounce ',
-    duration: 1500
-});
+
+class Chat {
+
+}
+
+
+type AnimalOptions = { nager: any } | { sauter: any }
+type AnimalFromOption<T> = T extends {nager: any} ? Poisons : Chat
+
+function generator<T extends AnimalOptions >( options: T): AnimalFromOption<T>
+{
+  if ("nager" in options ){
+    return new Poisons()
+  } else {
+    return new Chat()
+  }
+}
+
+const a = generator({nager:'aze'})
+ */
+//2ème exemple:
+/**
+ * class Poisons {
+  cri () {
+    return false
+  }
+}
+
+class Chat {
+  cri () {
+    return 'miaouu'
+  }
+}
+
+type AnimalCri<T> = T extends { cri : () => infer U} ? U : never
+
+type A = AnimalCri<Poisons>
+type B = AnimalCri<Chat>
+ */
+//2ème exemple:(Maped Types)
+class FeatureFlags {
+    env = 'hello';
+    darkMode() { return true; }
+    privateMode() { return true; }
+    nfswMode() { return true; }
+}
