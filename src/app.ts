@@ -264,7 +264,8 @@ type B = AnimalCri<Chat>
 
 //2ème exemple:(Maped Types)
 
-import type {PickByValue} from 'utility-types'
+/**
+ * import type {PickByValue} from 'utility-types'
 class FeatureFlags {
   env = 'hello'
   darkMode () {return true}
@@ -278,4 +279,28 @@ type OptionFlags<T> = {
 
 type A = OptionFlags<FeatureFlags>
 
+ */
 
+
+/**
+ * !L'Opérateur satisfies
+ * ? Exemple 
+*/
+
+type Colors = Record<string, [number, number, number] | string>
+
+function demo (c: Colors){
+
+}
+
+const colors = {
+  bleu: [0, 0, 255],
+  red: "#ff0000",
+  green: [0, 255,0]
+} satisfies Colors
+
+colors.green.map(v => v/2)
+
+demo(colors)
+
+export default {}
