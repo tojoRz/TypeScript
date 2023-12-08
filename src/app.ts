@@ -264,6 +264,7 @@ type B = AnimalCri<Chat>
 
 //2ème exemple:(Maped Types)
 
+import type {PickByValue} from 'utility-types'
 class FeatureFlags {
   env = 'hello'
   darkMode () {return true}
@@ -272,7 +273,7 @@ class FeatureFlags {
 }
 
 type OptionFlags<T> = {
-  +readonly [key in keyof T as `get${ string & key}`]: T[key] extends () => boolean ? boolean: never
+  +readonly [key in keyof PickByValue <T, () => any> as `is${ Capitalize < string & key > }`]: T[key] extends () => any ? ReturnType<T[key]> : never
 }
 
 type A = OptionFlags<FeatureFlags>
