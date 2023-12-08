@@ -10,7 +10,8 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "typescript": "^5.3.2"
+    "typescript": "^5.3.2",
+    "utility-types": "^3.10.0"
   },
   "dependencies": {
     "scroll-to": "^0.0.2"
