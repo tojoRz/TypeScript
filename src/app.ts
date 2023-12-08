@@ -186,25 +186,95 @@ compteur?.addEventListener("click", increment);
  * ? Exemple 
 */
 
-export class Point {
-  x = 0
-  y = 0
+// export class Point {
+//   x = 0
+//   y = 0
 
-  move (x: number, y:number) {
-    this.x += x
-    this.y += y
-    return this
+//   move (x: number, y:number) {
+//     this.x += x
+//     this.y += y
+//     return this
+//   }
+// }
+
+// window.ga('send', {
+//   hitType: 'event',
+//   eventCategory: 'Category'
+// })
+
+// import scrollTo from 'scroll-to'
+ 
+// scrollTo ( 500 , 1200 , {  
+//   ease : ' out-bounce ' , 
+//   duration : 1500 
+// } ) ;
+
+/**
+ * !Types utilitaires
+ * ? Exemple 
+*/
+
+// 1er exemple:
+
+/**
+ * class Poisons {
+
+}
+
+class Chat {
+
+}
+
+
+type AnimalOptions = { nager: any } | { sauter: any }
+type AnimalFromOption<T> = T extends {nager: any} ? Poisons : Chat
+
+function generator<T extends AnimalOptions >( options: T): AnimalFromOption<T> 
+{
+  if ("nager" in options ){
+    return new Poisons()
+  } else {
+    return new Chat()
   }
 }
 
-window.ga('send', {
-  hitType: 'event',
-  eventCategory: 'Category'
-})
+const a = generator({nager:'aze'})
+ */ 
 
-import scrollTo from 'scroll-to'
- 
-scrollTo ( 500 , 1200 , {  
-  ease : ' out-bounce ' , 
-  duration : 1500 
-} ) ;
+//2ème exemple:
+
+/**
+ * class Poisons {
+  cri () {
+    return false
+  }
+}
+
+class Chat {
+  cri () { 
+    return 'miaouu'
+  }
+}
+
+type AnimalCri<T> = T extends { cri : () => infer U} ? U : never
+
+type A = AnimalCri<Poisons>
+type B = AnimalCri<Chat>
+ */
+
+//2ème exemple:(Maped Types)
+
+class FeatureFlags {
+  env = 'hello'
+  darkMode () {return true}
+  privateMode () {return true}
+  nfswMode () {return true} 
+}
+
+type OptionFlags<T> = {
+  +readonly [key in keyof T as `get${ string & key}`]: T[key] extends () => boolean ? boolean: never
+}
+
+type A = OptionFlags<FeatureFlags>
+
+
