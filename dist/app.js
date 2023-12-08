@@ -9,10 +9,13 @@ const increment = (e) => {
     }
 };
 compteur?.addEventListener("click", increment);
-class FeatureFlags {
-    env = 'hello';
-    darkMode() { return true; }
-    privateMode() { return true; }
-    nfswMode() { return true; }
+function demo(c) {
 }
-export {};
+const colors = {
+    bleu: [0, 0, 255],
+    red: "#ff0000",
+    green: [0, 255, 0]
+};
+colors.green.map(v => v / 2);
+demo(colors);
+export default {};
