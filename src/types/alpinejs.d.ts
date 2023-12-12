@@ -10,7 +10,7 @@ declare module "alpinejs" {
 
   const Alpine: {
     start(): void;
-    data<T>(componentName: string, callBack: (params: any) => T): void;
+    data<T>(componentName: string, callBack: (params: any) => WithAlpineInstance<T>): void;
   };
 
   export default Alpine;
