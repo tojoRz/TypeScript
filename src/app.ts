@@ -324,8 +324,11 @@ Alpine.data('myComponent', function (initial: number = 0 ) {
     decrement () {
       this.compteur -= 1
       if ( this.compteur < 0 ) {
-        (this.$el as HTMLSpanElement).style.display = "none"
+        this.$el.style.display = "none"
       }
+    },
+    getCompteur () {
+      return this.compteur
     }
   }
 })
