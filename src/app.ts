@@ -287,7 +287,8 @@ type A = OptionFlags<FeatureFlags>
  * ? Exemple 
 */
 
-type Colors = Record<string, [number, number, number] | string>
+/**
+ * type Colors = Record<string, [number, number, number] | string>
 
 function demo (c: Colors){
 
@@ -304,3 +305,28 @@ colors.green.map(v => v/2)
 demo(colors)
 
 export default {}
+ */
+
+
+/**
+ * !AlpineJs
+ * ? Exemple 
+*/
+
+import Alpine from 'alpinejs'
+
+Alpine.data('myComponent', function (initial: number = 0 ) {
+  return {
+    compteur: initial,
+    increment () {
+      this.compteur += 1
+    },
+    decrement () {
+      this.compteur -= 1
+      if ( this.compteur < 0 ) {
+        (this.$el as HTMLSpanElement).style.display = "none"
+      }
+    }
+  }
+})
+Alpine.start();
