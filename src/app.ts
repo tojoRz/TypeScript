@@ -313,7 +313,8 @@ export default {}
  * ? Exemple 
 */
 
-import Alpine from 'alpinejs'
+/**
+ * import Alpine from 'alpinejs'
 
 Alpine.data('myComponent', function (initial: number = 0 ) {
   return {
@@ -333,3 +334,55 @@ Alpine.data('myComponent', function (initial: number = 0 ) {
   }
 })
 Alpine.start();
+ */
+
+/**
+ * !Forme conditionnel
+ * ? Exemple 
+*/
+
+type HTMLAttributes = {
+  img: {
+    alt: string
+  },
+  input: {
+    type?: 'text' | 'number',
+    name?: string
+  }
+  textarea: {
+    name?: string,
+    cols?: number,
+  }
+}
+
+type HTMLNode<TagName> = {
+  tagname: TagName,
+  class?: string,
+  id?: string,
+  attributes?: TagName extends keyof HTMLAttributes ? HTMLAttributes[TagName] : never
+}
+
+type ValueOf<T> = T[keyof T]
+
+type HTMLShapes = {
+  [key in keyof HTMLAttributes]: HTMLNode<key>
+}
+
+type HTMLShape = ValueOf<HTMLShapes>
+
+const img: HTMLShape = {
+  tagname: 'img',
+  class: '.demo',
+  attributes: {
+    alt: 'demo'
+  }
+}
+
+const input: HTMLShape = {
+  tagname: 'input',
+  attributes: {
+    name: 'demo',
+    type: 'text'
+  }
+}
+
