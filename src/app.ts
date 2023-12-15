@@ -341,6 +341,8 @@ Alpine.start();
  * ? Exemple 
 */
 
+/**
+ * 
 type HTMLAttributes = {
   img: {
     alt: string
@@ -383,6 +385,26 @@ const input: HTMLShape = {
   attributes: {
     name: 'demo',
     type: 'text'
+  }
+}
+ */
+
+
+/**
+ * !Decorateur
+ * ? Exemple 
+*/
+
+function CustomElement (name: string) {
+  return function (constructor: typeof HTMLElement){
+    customElements.define(name, constructor)
+  }
+}
+
+@CustomElement('demo-hello')
+class Demo extends HTMLElement {
+  connectedCallback () {
+    this.innerHTML = 'Hello word'
   }
 }
 
